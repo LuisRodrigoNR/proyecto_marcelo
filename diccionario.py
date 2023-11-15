@@ -105,19 +105,32 @@ dicIt.extend(consulta('Wikipedia','it'))
 #grafica las frecuencias de los textos dados
 
 texto1='Jigcg xet onug e Uovnjcwfen xio mottgttgq jig fotj xonqgclvb Dootg wov uen afedang, loc gpgcw qew xign ig patajgq jig ngtj, jig Dootg ieq beaq e ygevjalvb, dbajjgcand, dobqgn gdd. Jig Uovnjcwfen jooh jig gddt jo fechgj enq toon ygden jo dgj caui. Yvj aj xet noj bond yglocg ig dcgx afmejagnj xaji jig Dootg yguevtg tig depg iaf onbw e tandbg dobqgn gdd e qew. Ig xet noj dgjjand caui letj gnovdi. Jign ong qew, eljgc ig ieq lanatigq uovnjand iat fongw, jig aqge uefg jo iaf jiej ig uovbq dgj ebb jig dobqgn gddt ej onug yw habband jig Dootg enq uvjjand aj omgn. Yvj xign jig qggq xet qong, noj e tandbg dobqgn gdd qaq ig lanq, enq iat mcguaovt Dootg xet qgeq'.replace('.','').replace(',','').replace(' ','')
+texto2='Tp sparnq oj Ijq jrd ebpqoj. At h p ijpzgnzk oj kajgjr. Pz bjf-oj-gcpzrrjj, at h p zq rptnq pljg zq kapqn, zqj rpttj-p-spqejb, zqj gzaraqj rkpgajzrj jd vpzqj jd zqj rpttj oj ipaq. At p wpad gnqrdbzabj jq ktzr zqj ijttj ljbpqop gnqdjqpqd zqj iaitandcjxzj, knzb kbnwadjb oz rntjat jd o’zqj lzj rzb tj vpboaq. Pz rnzr-rnt, at h p zqj gplj, knzb bpqejb tj laq. Pz kbjsajb jdpej, at h p dbnar gcpsibjr. Pz ojzuajsj jdpej, at h p zq izbjpz jd ojzu gcpsibjr, onqd tp rajqqj. Opqr tj izbjpz, at h p zq ljtn o’pkkpbdjsjqd, ojr cptdjbjr jd zq rdjkkjb. Tj vpboaq jrd tnqe jd jdbnad, at h p zqj iptpqçnabj pz wnqo jd zq ipbijgzj, kbngcj oj tp djbbprrj, rzb tpxzjttj jrd knrjj zq dbpqrpd. Ojr gcpdr lajqqjqd rnzljqd gcprrjb tjr wjzattjr xza lntjqd pz ljqd'.replace('.','').replace(',','').replace(' ','')
 
 # grafica('Jigcg xet onug e Uovnjcwfen xio mottgttgq jig fotj xonqgclvb Dootg wov uen afedang, loc gpgcw qew xign ig patajgq jig ngtj, jig Dootg ieq beaq e ygevjalvb, dbajjgcand, dobqgn gdd. Jig Uovnjcwfen jooh jig gddt jo fechgj enq toon ygden jo dgj caui. Yvj aj xet noj bond yglocg ig dcgx afmejagnj xaji jig Dootg yguevtg tig depg iaf onbw e tandbg dobqgn gdd e qew. Ig xet noj dgjjand caui letj gnovdi. Jign ong qew, eljgc ig ieq lanatigq uovnjand iat fongw, jig aqge uefg jo iaf jiej ig uovbq dgj ebb jig dobqgn gddt ej onug yw habband jig Dootg enq uvjjand aj omgn. Yvj xign jig qggq xet qong, noj e tandbg dobqgn gdd qaq ig lanq, enq iat mcguaovt Dootg xet qgeq'.replace('.','').replace(',','').replace(' ',''),'texto 1')
 # grafica('Tp sparnq oj Ijq jrd ebpqoj. At h p ijpzgnzk oj kajgjr. Pz bjf-oj-gcpzrrjj, at h p zq rptnq pljg zq kapqn, zqj rpttj-p-spqejb, zqj gzaraqj rkpgajzrj jd vpzqj jd zqj rpttj oj ipaq. At p wpad gnqrdbzabj jq ktzr zqj ijttj ljbpqop gnqdjqpqd zqj iaitandcjxzj, knzb kbnwadjb oz rntjat jd o’zqj lzj rzb tj vpboaq. Pz rnzr-rnt, at h p zqj gplj, knzb bpqejb tj laq. Pz kbjsajb jdpej, at h p dbnar gcpsibjr. Pz ojzuajsj jdpej, at h p zq izbjpz jd ojzu gcpsibjr, onqd tp rajqqj. Opqr tj izbjpz, at h p zq ljtn o’pkkpbdjsjqd, ojr cptdjbjr jd zq rdjkkjb. Tj vpboaq jrd tnqe jd jdbnad, at h p zqj iptpqçnabj pz wnqo jd zq ipbijgzj, kbngcj oj tp djbbprrj, rzb tpxzjttj jrd knrjj zq dbpqrpd. Ojr gcpdr lajqqjqd rnzljqd gcprrjb tjr wjzattjr xza lntjqd pz ljqd'.replace('.','').replace(',','').replace(' ',''),'texto 2')
 
 #grafica los textos con los idiomas
 
+# correlaciones=[]
+
+# correlaciones.append (grafica2(dicEng,texto1,'ingles'))
+# correlaciones.append (grafica2(dicFr,texto1,'frances'))
+# correlaciones.append (grafica2(dicAle,texto1,'aleman'))
+# correlaciones.append (grafica2(dicPor,texto1,'portugues'))
+# correlaciones.append (grafica2(dicIt,texto1,'italiano'))
+
+# mayor = max(correlaciones, key=lambda x: x[0])
+
+# print('El que tiene mayor correlacion es '+mayor[1])
+
 correlaciones=[]
 
-correlaciones.append (grafica2(dicEng,texto1,'ingles'))
-correlaciones.append (grafica2(dicFr,texto1,'frances'))
-correlaciones.append (grafica2(dicAle,texto1,'aleman'))
-correlaciones.append (grafica2(dicPor,texto1,'portugues'))
-correlaciones.append (grafica2(dicIt,texto1,'italiano'))
+correlaciones.append (grafica2(dicEng,texto2,'ingles'))
+correlaciones.append (grafica2(dicFr,texto2,'frances'))
+correlaciones.append (grafica2(dicAle,texto2,'aleman'))
+correlaciones.append (grafica2(dicPor,texto2,'portugues'))
+correlaciones.append (grafica2(dicIt,texto2,'italiano'))
 
 mayor = max(correlaciones, key=lambda x: x[0])
 
