@@ -18,12 +18,9 @@ def consulta(pagina,idioma):
     diccionario=[]
 
     for i in datos:
-
-        #utilizo la libreria re para poder eliminar signos de puntuacion y despues la libreria unicode para eliminar los acentos
         i=valida(i)
-
-        # if not i in diccionario:          #Filtra las repetidas
-        diccionario.append(i)
+        if not i in diccionario:          #Filtra las repetidas
+            diccionario.append(i)
     return diccionario
 
 def cuenta(lista):
@@ -67,6 +64,13 @@ def grafica2(lista1,lista2,idioma,texto):
 def valida(palabra):
     return unidecode.unidecode(re.sub(r'[^A-Za-záéíóúüñÁÉÍÓÚÜÑç]','',palabra)).lower()
 
+def guarda(lista,nombre):
+    
+    datos = ' '.join(lista)
+    nombre=nombre+'.txt'
+    with open(nombre,'w') as archivo:
+        archivo.write(datos)
+    
 #consigue datos de paginas de wikipedia
 
 dicEng=consulta('YouTube','en')
@@ -89,6 +93,14 @@ dicIt=consulta('YouTube','it')
 dicIt.extend(consulta('Facebook','it'))
 dicIt.extend(consulta('Wikipedia','it'))
 
+#Guarda los diccionarios
+
+guarda(dicEng,'dicEng')
+guarda(dicFr,'dicFr')
+guarda(dicAle,'dicAle')
+guarda(dicPor,'dicPor')
+guarda(dicIt,'dicIt')
+
 #imprime la longitud de las listas de palabras
 
 # print('ingles',len(dicEng))
@@ -107,39 +119,39 @@ dicIt.extend(consulta('Wikipedia','it'))
 
 #grafica las frecuencias de los textos dados
 
-texto1='Jigcg xet onug e Uovnjcwfen xio mottgttgq jig fotj xonqgclvb Dootg wov uen afedang, loc gpgcw qew xign ig patajgq jig ngtj, jig Dootg ieq beaq e ygevjalvb, dbajjgcand, dobqgn gdd. Jig Uovnjcwfen jooh jig gddt jo fechgj enq toon ygden jo dgj caui. Yvj aj xet noj bond yglocg ig dcgx afmejagnj xaji jig Dootg yguevtg tig depg iaf onbw e tandbg dobqgn gdd e qew. Ig xet noj dgjjand caui letj gnovdi. Jign ong qew, eljgc ig ieq lanatigq uovnjand iat fongw, jig aqge uefg jo iaf jiej ig uovbq dgj ebb jig dobqgn gddt ej onug yw habband jig Dootg enq uvjjand aj omgn. Yvj xign jig qggq xet qong, noj e tandbg dobqgn gdd qaq ig lanq, enq iat mcguaovt Dootg xet qgeq'
-texto2='Tp sparnq oj Ijq jrd ebpqoj. At h p ijpzgnzk oj kajgjr. Pz bjf-oj-gcpzrrjj, at h p zq rptnq pljg zq kapqn, zqj rpttj-p-spqejb, zqj gzaraqj rkpgajzrj jd vpzqj jd zqj rpttj oj ipaq. At p wpad gnqrdbzabj jq ktzr zqj ijttj ljbpqop gnqdjqpqd zqj iaitandcjxzj, knzb kbnwadjb oz rntjat jd o’zqj lzj rzb tj vpboaq. Pz rnzr-rnt, at h p zqj gplj, knzb bpqejb tj laq. Pz kbjsajb jdpej, at h p dbnar gcpsibjr. Pz ojzuajsj jdpej, at h p zq izbjpz jd ojzu gcpsibjr, onqd tp rajqqj. Opqr tj izbjpz, at h p zq ljtn o’pkkpbdjsjqd, ojr cptdjbjr jd zq rdjkkjb. Tj vpboaq jrd tnqe jd jdbnad, at h p zqj iptpqçnabj pz wnqo jd zq ipbijgzj, kbngcj oj tp djbbprrj, rzb tpxzjttj jrd knrjj zq dbpqrpd. Ojr gcpdr lajqqjqd rnzljqd gcprrjb tjr wjzattjr xza lntjqd pz ljqd'
+# texto1='Jigcg xet onug e Uovnjcwfen xio mottgttgq jig fotj xonqgclvb Dootg wov uen afedang, loc gpgcw qew xign ig patajgq jig ngtj, jig Dootg ieq beaq e ygevjalvb, dbajjgcand, dobqgn gdd. Jig Uovnjcwfen jooh jig gddt jo fechgj enq toon ygden jo dgj caui. Yvj aj xet noj bond yglocg ig dcgx afmejagnj xaji jig Dootg yguevtg tig depg iaf onbw e tandbg dobqgn gdd e qew. Ig xet noj dgjjand caui letj gnovdi. Jign ong qew, eljgc ig ieq lanatigq uovnjand iat fongw, jig aqge uefg jo iaf jiej ig uovbq dgj ebb jig dobqgn gddt ej onug yw habband jig Dootg enq uvjjand aj omgn. Yvj xign jig qggq xet qong, noj e tandbg dobqgn gdd qaq ig lanq, enq iat mcguaovt Dootg xet qgeq'
+# texto2='Tp sparnq oj Ijq jrd ebpqoj. At h p ijpzgnzk oj kajgjr. Pz bjf-oj-gcpzrrjj, at h p zq rptnq pljg zq kapqn, zqj rpttj-p-spqejb, zqj gzaraqj rkpgajzrj jd vpzqj jd zqj rpttj oj ipaq. At p wpad gnqrdbzabj jq ktzr zqj ijttj ljbpqop gnqdjqpqd zqj iaitandcjxzj, knzb kbnwadjb oz rntjat jd o’zqj lzj rzb tj vpboaq. Pz rnzr-rnt, at h p zqj gplj, knzb bpqejb tj laq. Pz kbjsajb jdpej, at h p dbnar gcpsibjr. Pz ojzuajsj jdpej, at h p zq izbjpz jd ojzu gcpsibjr, onqd tp rajqqj. Opqr tj izbjpz, at h p zq ljtn o’pkkpbdjsjqd, ojr cptdjbjr jd zq rdjkkjb. Tj vpboaq jrd tnqe jd jdbnad, at h p zqj iptpqçnabj pz wnqo jd zq ipbijgzj, kbngcj oj tp djbbprrj, rzb tpxzjttj jrd knrjj zq dbpqrpd. Ojr gcpdr lajqqjqd rnzljqd gcprrjb tjr wjzattjr xza lntjqd pz ljqd'
 
-#validamos los textos
+# #validamos los textos
 
-texto1=valida(texto1)
-texto2=valida(texto2)
+# texto1=valida(texto1)
+# texto2=valida(texto2)
 
 # grafica(texto1,'texto 1')
 # grafica(texto2,'texto 2')
 
 #grafica los textos con los idiomas
 
-correlaciones=[]
+# correlaciones=[]
 
-correlaciones.append (grafica2(dicEng,texto1,'ingles','texto 1'))
-correlaciones.append (grafica2(dicFr,texto1,'frances','texto 1'))
-correlaciones.append (grafica2(dicAle,texto1,'aleman','texto 1'))
-correlaciones.append (grafica2(dicPor,texto1,'portugues','texto 1'))
-correlaciones.append (grafica2(dicIt,texto1,'italiano','texto 1'))
+# correlaciones.append (grafica2(dicEng,texto1,'ingles','texto 1'))
+# correlaciones.append (grafica2(dicFr,texto1,'frances','texto 1'))
+# correlaciones.append (grafica2(dicAle,texto1,'aleman','texto 1'))
+# correlaciones.append (grafica2(dicPor,texto1,'portugues','texto 1'))
+# correlaciones.append (grafica2(dicIt,texto1,'italiano','texto 1'))
 
-mayor = max(correlaciones, key=lambda x: x[0])
+# mayor = max(correlaciones, key=lambda x: x[0])
 
-print('El que tiene mayor correlacion es '+mayor[1])
+# print('El que tiene mayor correlacion es '+mayor[1])
 
-correlaciones=[]
+# correlaciones=[]
 
-correlaciones.append (grafica2(dicEng,texto2,'ingles','texto 2'))
-correlaciones.append (grafica2(dicFr,texto2,'frances','texto 2'))
-correlaciones.append (grafica2(dicAle,texto2,'aleman','texto 2'))
-correlaciones.append (grafica2(dicPor,texto2,'portugues','texto 2'))
-correlaciones.append (grafica2(dicIt,texto2,'italiano','texto 2'))
+# correlaciones.append (grafica2(dicEng,texto2,'ingles','texto 2'))
+# correlaciones.append (grafica2(dicFr,texto2,'frances','texto 2'))
+# correlaciones.append (grafica2(dicAle,texto2,'aleman','texto 2'))
+# correlaciones.append (grafica2(dicPor,texto2,'portugues','texto 2'))
+# correlaciones.append (grafica2(dicIt,texto2,'italiano','texto 2'))
 
-mayor = max(correlaciones, key=lambda x: x[0])
+# mayor = max(correlaciones, key=lambda x: x[0])
 
-print('El que tiene mayor correlacion es '+mayor[1])
+# print('El que tiene mayor correlacion es '+mayor[1])
