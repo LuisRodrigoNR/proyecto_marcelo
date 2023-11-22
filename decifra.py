@@ -24,7 +24,7 @@ posK = "abcdefghijklmnopqrstuvwxyz"
 posL = "abcdefghijklmnopqrstuvwxyz"
 posM = "abcdefghijklmnopqrstuvwxyz"
 posN = "abcdefghijklmnopqrstuvwxyz"
-posO = "abcdefghijklmnopqrstuvwxyz"
+posO = "eopnmdt"
 posP = "abcdefghijklmnopqrstuvwxyz"
 posQ = "s"
 posR = "abcdefghijklmnopqrstuvwxyz"
@@ -80,11 +80,18 @@ c=0
 
 #probando con xonqgclvb
 
+# for p in dicEng:
+#       if len(p)==9:
+#             if p[3:5]=='se':
+#                   c+=1
+#                   print(p)
+# print(c)
+
+#probando con poon
+
 for p in dicEng:
-      if len(p)==9:
-            if p[3:5]=='se':
+      if len(p)==4:
+            if p[1]==p[2]:
                   c+=1
                   print(p)
 print(c)
-
-# 
