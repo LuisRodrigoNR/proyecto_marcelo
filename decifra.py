@@ -87,11 +87,11 @@ c=0
 #                   print(p)
 # print(c)
 
-#probando con poon
+#probando con poon: posibles o:eopnmdt
 
-for p in dicEng:
-      if len(p)==4:
-            if p[1]==p[2]:
-                  c+=1
-                  print(p)
-print(c)
+# for p in dicEng:
+#       if len(p)==4:
+#             if p[1]==p[2]:
+#                   c+=1
+#                   print(p)
+# print(c)
